@@ -11,6 +11,7 @@ MAINTAINER Thomas Schubert "huluvu424242@gmail.com"
 
 # install the full configuration via puppet
 RUN  \
+  pacman -Sy && \
   pacman -S docker && \
   systemctl enable docker.service && \
   systemctl enable docker.service
