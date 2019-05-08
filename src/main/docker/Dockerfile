@@ -3,18 +3,12 @@
 #
 
 # pull base image.
-FROM archlinux/base
+FROM docker
 
 
 # maintainer details
 MAINTAINER Thomas Schubert "huluvu424242@gmail.com"
 
-# install the full configuration via puppet
-RUN  \
-  pacman -Sy && \
-  pacman -S --noconfirm --color always docker && \
-  systemctl enable docker.service && \
-  systemctl enable docker.service
 
 # Commandline
 CMD docker run -d -p 4444:4444 --name selenium-hub selenium/hub:3.4.0 && \
